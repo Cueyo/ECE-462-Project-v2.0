@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Cardiac Signal Processing Writeup</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Cardiac Signal Processing - Writeup</h1>
+						<p>This is the Technical Writeup for the project</p>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<span class="image main"><img src="images/ecg plot.PNG" alt="" /></span>
+								<h2>Introduction</h2>
+								<p>This project is on the subject of methods used to measure cardiac signals.</p>
+								<p>Currently it consists of two major methods, the FFT and the STFT, with the FTFFT and arrythmia detection code currently in the works.</p>
+								<span class="image main"><img src="images/ecg pic.PNG" alt="" /></span>
+								<h2>Scope</h2>
+								<p>The scope of this project, or rather its current reason for existing is fairly simple, that being that we want to explore the two major methods used in the field to detect cardiac signals (FFT & STFT) and find a way to detect Arrythmia via some form of code - I should also note, that the FTFFT is a stretch goal as of current.</p>
+								<span class="image main"><img src="images/scope project.PNG" alt="" /></span>
+								<h2>Fast Fourier Transform</h2>
+								<p>The Fast Fourier Transform is defined as an algorithm that computes the discrete Fourier transform (DFT) of a sequence, or its inverse (IDFT). It mathematically follows as such: </p>
+								<span class="image main"><img src="images/FFT math pic.PNG" alt="" /></span>
+								<p>where e^(i2pi/N) is a primitive Nth root of 1.</p>
+								<p>This mathematic definition of the FFT has been used in our code to help read cardiac signals, with the code looking as follows:</p>
+								<span class="image main"><img src="images/FFT code.PNG" alt="" /></span>
+								<p>This code, results in the following signal:</p>
+								<span class="image main"><img src="images/cardiac signal one.PNG" alt="" /></span>
+								<p>This is a normal cardiac signal (which you'll notice looks a lot like the one above):</p>
+								<span class="image main"><img src="images/cardiac signal 2.png" alt="" /></span>
+								<p>You'll notice how the two signals look very much alike, at least in that they follow the same layout (just one is noisier), for this reason, we cna conlcude that this method is working correctly in reading cardiac signals. It mathematically follows as such:</p>
+								<h2>Short Time Fouruer Transform</h2>
+								<p>The Short-time Fourier transform (STFT), is a Fourier-related transform used to determine the sinusoidal frequency and phase content of local sections of a signal as it changes over time.</p>
+								<span class="image main"><img src="images/STFT eq.PNG" alt="" /></span>
+								<p> where where w(t) and x(t) is the signal to be transformed</p>
+								<p>The code follows as such:</p>
+								<span class="image main"><img src="images/code STFT 1.PNG" alt="" /></span>
+								<span class="image main"><img src="images/STFT code 2.PNG" alt="" /></span>
+								<p>The plot from Matlab is as follows:</p>
+								<span class="image main"><img src="images/STFT plot.png" alt="" /></span>
+								<p>This time, when compared to the prior graph this one is far noisier and is even harder to make out, though it does still greatly resemble the actual healthy signal.</p>
+								<h2>Arrythmia Algorithm</h2>
+								<p>Currently this aspectr of the project is still under developmnent, thought there are some key things I would like to discuss, most keenly in how exactly this part will be done, as it was not possible before having the FFT and STFT working:</p>
+								<span class="image main"><img src="images/ECG stuff.png" alt="" /></span>
+								<h2>Faster-Than-Fast Fourier Transform</h2>
+								<p>This aspect of the project has yet to even be touched, and is pretty much on the cutting room floor for lack of a better term, it may be explored in the future and this part of the website will probably have more text and research added, but we probably will never get around to putting it into code.</p>
+								<span class="image main"><img src="images/cutting room floor.png" alt="" /></span>
+								<h2>How we did it all?</h2>
+								<p>This will be written once we're actually done.</p>
+								<span class="image main"><img src="images/under construct.jfif" alt="" /></span>
+								<h2>Results</h2>
+								<p>Currently, the results consist of the STFT and the FFT, with the current work done looking fairly promising.</p>
+								<span class="image main"><img src="images/under construct.jfif" alt="" /></span>
+								<h2>Conclusion</h2>
+								<p>There isn't any conclusion yet.</p>
+								<span class="image main"><img src="images/under construct.jfif" alt="" /></span>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<h2>Aliquam sed mauris</h2>
+							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
+							<ul class="actions">
+								<li><a href="#" class="button">Learn More</a></li>
+							</ul>
+						</section>
+						<section>
+							<h2>Etiam feugiat</h2>
+							<dl class="alt">
+								<dt>Address</dt>
+								<dd>1234 Somewhere Road &bull; Nashville, TN 00000 &bull; USA</dd>
+								<dt>Phone</dt>
+								<dd>(000) 000-0000 x 0000</dd>
+								<dt>Email</dt>
+								<dd><a href="#">information@untitled.tld</a></dd>
+							</dl>
+							<ul class="icons">
+								<li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+							</ul>
+						</section>
+						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
